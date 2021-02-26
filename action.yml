@@ -24,8 +24,7 @@ inputs:
     default: latest
   token:
     description: >
-      GitHub access token to use inside the yb build environment. Defaults to
-      ${{ github.token }}.
+      GitHub access token to use inside the yb build environment.
     default: ${{ github.token }}
 runs:
   using: node12
