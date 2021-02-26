@@ -55,7 +55,8 @@ const runCommand = (command: string, args: string[]): Promise<void> => {
 
 (async () => {
   try {
-    const octokit = getOctokit(getInput('token'));
+    const gitHubToken = getInput('token');
+    const octokit = getOctokit(gitHubToken);
 
     const ybRepo = {owner: 'yourbase', repo: 'yb'};
     const versionTag = getInput('version');
@@ -95,6 +96,19 @@ const runCommand = (command: string, args: string[]): Promise<void> => {
       console.log('Installed in %s', destdir);
     }
     addPath(destdir);
+
+    // Create netrc file from provided GitHub token.
+    const ybConfigDir = path.join(home, '.config', 'yb');
+    await fs.mkdir(ybConfigDir, {
+      mode: 0o700,
+      recursive: true,
+    });
+    const netrcData = 'machine github.com\n' +
+      'login x-access-token\n' +
+      'password ' + gitHubToken + '\n';
+    await fs.writeFile(path.join(ybConfigDir, 'netrc'), netrcData, {
+      mode: 0o600,
+    });
   } catch (error) {
     setFailed(error);
   }

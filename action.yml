@@ -23,7 +23,9 @@ inputs:
     required: false
     default: latest
   token:
-    description: GitHub access token for reading the yourbase/yb repository
+    description: >
+      GitHub access token to use inside the yb build environment. Defaults to
+      ${{ github.token }}.
     default: ${{ github.token }}
 runs:
   using: node12

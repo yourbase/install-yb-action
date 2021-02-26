@@ -26,8 +26,8 @@ Version tag of yb to install (like v0.6.1)
 
 ### `token`
 
-GitHub access token for reading the [yourbase/yb][yb] repository
-
+GitHub access token to use inside the [yb][] build environment. Defaults to
+`${{ github.token }}`.
 
 ## Contributing
 
