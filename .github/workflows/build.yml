@@ -28,7 +28,7 @@ jobs:
     - name: Check out code
       uses: actions/checkout@v2
     - name: Install yb
-      uses: "."
+      uses: "./."
       with:
         version: v0.6.3
     - name: Build
