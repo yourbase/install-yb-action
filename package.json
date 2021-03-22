@@ -17,7 +17,7 @@
   "dependencies": {
     "@actions/core": "^1.2.6",
     "@actions/github": "^4.0.0",
-    "esbuild": "^0.9.4"
+    "esbuild": "^0.9.6"
   },
   "devDependencies": {
     "@types/node": "^12.20.4",
