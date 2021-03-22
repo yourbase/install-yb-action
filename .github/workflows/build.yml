@@ -36,4 +36,4 @@ jobs:
     - name: Check that built JavaScript matches
       run: |
         git diff --quiet --exit-code dist/index.js ||
-          ( echo "::error file=dist/index.js::Bundled JavaScript out of sync; run yb build" ; return 1 )
+          ( echo "::error file=dist/index.js::Bundled JavaScript out of sync; run yb build" ; exit 1 )
