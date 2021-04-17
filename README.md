@@ -9,13 +9,21 @@ GitHub Action runner.
 ## Usage
 
 ```yaml
-- name: Install yb
-  uses: yourbase/install-yb-action@main
-  with:
-    # Pin to a specific version of yb. If omitted, defaults to the latest release.
-    version: v0.6.1
-- name: Build
-  run: yb build
+name: Build
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check out code
+      uses: actions/checkout@v2
+    - name: Install yb
+      uses: yourbase/install-yb-action@main
+      with:
+        # Pin to a specific version of yb. If omitted, defaults to the latest release.
+        version: v0.6.3
+    - name: Build
+      run: yb build
 ```
 
 ## Inputs
