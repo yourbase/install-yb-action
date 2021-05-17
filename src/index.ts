@@ -62,11 +62,11 @@ const runCommand = (command: string, args: string[]): Promise<void> => {
     const versionTag = getInput('version');
     let release;
     if (!versionTag || versionTag === 'latest') {
-      release = (await octokit.repos.getLatestRelease({
+      release = (await octokit.rest.repos.getLatestRelease({
         ...ybRepo
       })).data;
     } else {
-      release = (await octokit.repos.getReleaseByTag({
+      release = (await octokit.rest.repos.getReleaseByTag({
         ...ybRepo,
         tag: versionTag,
       })).data;
