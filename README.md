@@ -18,7 +18,7 @@ jobs:
     - name: Check out code
       uses: actions/checkout@v2
     - name: Install yb
-      uses: yourbase/install-yb-action@main
+      uses: yourbase/install-yb-action@v1
       with:
         # Pin to a specific version of yb. If omitted, defaults to the latest release.
         version: v0.6.3
