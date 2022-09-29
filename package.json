@@ -15,7 +15,7 @@
     "url": "https://github.com/yourbase/install-yb-action.git"
   },
   "dependencies": {
-    "@actions/core": "^1.6.0",
+    "@actions/core": "^1.10.0",
     "@actions/github": "^5.0.0",
     "esbuild": "^0.14.3"
   },
